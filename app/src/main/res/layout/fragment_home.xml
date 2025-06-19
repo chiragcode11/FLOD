@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Create Team -->
+    <Button
+        android:id="@+id/btnCreateTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create New Team" />
+
+    <!-- MapView / MapFragment -->
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Geofence Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/btnAddGeofence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Geofence" />
+
+        <Button
+            android:id="@+id/btnRemoveGeofence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove Geofence"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
+
+    <!-- Empty / Loading -->
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No teams available. Create one!"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="16dp"/>
+
+    <!-- Teams List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTeams"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
